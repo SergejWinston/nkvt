@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sneroff. >> nkvt</title>
+    <meta name="title" content="sneroff. >> nkvt" />
+    <meta name="description" content="I'm too busy right now, I need a cup of tea. ☕" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sneroff.me/" />
+    <meta property="og:title" content="sneroff. >> nkvt" />
+    <meta property="og:description" content="I'm too busy right now, I need a cup of tea. ☕" />
+    <meta property="og:image" content="https://sneroff.me/image.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sneroff.me/" />
+    <meta property="twitter:title" content="sneroff. >> nkvt" />
+    <meta property="twitter:description" content="I'm too busy right now, I need a cup of tea. ☕" />
+    <meta property="twitter:image" content="https://sneroff.me/image.png" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="icon" type="image/svg" href="../favicon.svg" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+    <script src="../js/function.js"></script>
+
+    <script>
+        function applyTheme(theme) {
+            document.documentElement.setAttribute("data-theme", theme);
+        }
+
+        function detectSystemTheme() {
+            const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+            if (darkThemeMq.matches) {
+                applyTheme("dark");
+            } else {
+                applyTheme("light");
+            }
+        }
+
+        window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .addEventListener("change", (e) => {
+                const newColorScheme = e.matches ? "dark" : "light";
+                applyTheme(newColorScheme);
+            });
+
+        window.addEventListener("DOMContentLoaded", detectSystemTheme);
+
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <span class="company-name">sneroff. // <span style="font-style: normal;" class="gray-text">NKVT</span></span>
+        </header>
+
+        <div class="content">
+            <div class="block">
+                
+            </div>
+        </div>
+
+        <footer class="site-footer">
+            <div class="contact"><a href="https://t.me/sneroff">S.Nekrasov</a> // <a
+                    href="https://t.me/xegerol">V.Murashko (9CA-154)</a> // <a
+                    href="https://t.me/sugar994">U.Burba (9СА-221)</a>
+            </div>
+        </footer>
+    </div>
+    <script src="../js/login.js"></script>
+
+</body>
+
+</html>
