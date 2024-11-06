@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sneroff. >> nkvt</title>
+    <meta name="title" content="sneroff. >> nkvt" />
+    <meta name="description" content="Already studying.. I need a cup of tea. ☕" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sneroff.me/" />
+    <meta property="og:title" content="sneroff. >> nkvt" />
+    <meta property="og:description" content="Already studying.. I need a cup of tea. ☕" />
+    <meta property="og:image" content="https://sneroff.me/image.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sneroff.me/" />
+    <meta property="twitter:title" content="sneroff. >> nkvt" />
+    <meta property="twitter:description" content="Already studying.. I need a cup of tea. ☕" />
+    <meta property="twitter:image" content="https://sneroff.me/image.png" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" type="image/svg" href="../favicon.svg" />
+    <script src="../js/function.js"></script>
+
+    <script>
+        function applyTheme(theme) {
+            document.documentElement.setAttribute("data-theme", theme);
+        }
+
+        function detectSystemTheme() {
+            const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+            if (darkThemeMq.matches) {
+                applyTheme("dark");
+            } else {
+                applyTheme("light");
+            }
+        }
+
+        window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .addEventListener("change", (e) => {
+                const newColorScheme = e.matches ? "dark" : "light";
+                applyTheme(newColorScheme);
+            });
+
+        window.addEventListener("DOMContentLoaded", detectSystemTheme);
+
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <span class="company-name">sneroff. // <span style="font-style: normal;"
+                    class="gray-text">NKVT</span></span>
+        </header>
+
+        <div class="content">
+            <div class="block">
+                <div class="left mini-block">
+                    <div class="about-project">
+                        <img class="logo-collage" src="../logo.png" alt="image-collage">
+                        <h2 class="title-collage">НКЭиВТ</h2>
+                    </div>
+                    <div class="actions-block">
+                        <div class="collage button" onclick="window.location.href='http://www.nke.ru/'">
+                            <a href="http://www.nke.ru/">Сайт НКЭиВТ</a>
+                        </div>
+                        <div class="schedule button" onclick="window.location.href='../times/'">
+                            <a href="../times/">Расписание звонков</a>
+                        </div>
+                        <div class="schedule button" onclick="window.location.href='../schedule/'">
+                            <a href="../schedule/">Расписание уроков</a>
+                        </div>
+                        <div class="hometask button" onclick="window.location.href='../tasks/'">
+                            <a href="../tasks/">Домашнее задание</a>
+                        </div>
+                    </div>
+                    <div class="description-project">
+                        <p>Проект создан для учеников НКЭиВТ, чтобы иметь доступ к расписанию уроков и домашнему заданию
+                            в любое время. Этот проект помогает студентам оставаться организованными и эффективно
+                            управлять своим временем.</p>
+                    </div>
+                </div>
+                <div class="right mini-block">
+                    <h2 class="title-page">Расписание звонков</h2>
+                    <h2 class="subtitle">Первая смена</h3>
+                        <div class="sub-elements-first"></div>
+                        <h2 class="subtitle">Вторая смена</h2>
+                        <div class="sub-elements-second"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="site-footer">
+            <div class="contact"><a href="https://t.me/sneroff">S.Nekrasov</a> // <a
+                    href="https://t.me/xegerol">V.Murashko (9CA-154)</a> // <a href="https://t.me/sugar994">U.Burba
+                    (9СА-221)</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const schedule = {
+            firstShift: {
+                "Понедельник-Пятница": [
+                    ["8:30 - 9:15", "9:20 - 10:05"],
+                    ["10:25 – 11:10", "11:15 – 12:00"],
+                    ["12:45 – 13:30", "13:35 – 14:20"],
+                    ["14:30 – 15:15", "15:20 – 16:05"]
+                ],
+                Суббота: [
+                    ["8:30 - 9:15", "9:20 - 10:05"],
+                    ["10:25 – 11:10", "11:15 – 12:00"],
+                    ["12:10 - 12:55", "13:00 - 13:45"],
+                    ["13:50 – 14:35", "14:40 – 15:25"]
+                ]
+            },
+            secondShift: {
+                "Понедельник-Пятница":[
+                    ["14:30 – 15:15", "15:20 – 16:05"],
+                    ["16:25 – 17:10", "17:15 – 18:00"],
+                    ["18:10 – 18:55", "19:00 – 19:45"]
+                ],
+            }
+        };
+
+        function generateSchedule(shift) {
+            const container = document.querySelector(`.sub-elements-${shift}`);
+            const days = schedule[shift === 'first' ? 'firstShift' : 'secondShift'];
+
+            for (const [day, times] of Object.entries(days)) {
+                const dayDiv = document.createElement('div');
+                dayDiv.classList.add('dayofweek');
+
+                const dayName = document.createElement('p');
+                dayName.classList.add('nameday');
+                dayName.textContent = day;
+                dayDiv.appendChild(dayName);
+
+                const timesPare = document.createElement('div');
+                timesPare.classList.add('times-pare');
+
+                const table = document.createElement('table');
+                const tbody = document.createElement('tbody');
+
+                times.forEach((time, index) => {
+                    const tr = document.createElement('tr');
+                    const td1 = document.createElement('td');
+                    td1.textContent = `${index + 1}.`;
+                    const td2 = document.createElement('td');
+                    td2.textContent = time[0];
+                    const td3 = document.createElement('td');
+                    td3.textContent = time[1];
+                    tr.appendChild(td1);
+                    tr.appendChild(td2);
+                    tr.appendChild(td3);
+                    tbody.appendChild(tr);
+
+                    if (index === 0 || (index === 1 && shift === 'first')) {
+                        const breakTr = document.createElement('tr');
+                        const breakTd = document.createElement('td');
+                        breakTd.colSpan = 3;
+                        breakTd.style.textAlign = 'center';
+                        breakTd.textContent = index === 0 ? 'Перерыв 20 минут' : 'Перерыв 45 минут';
+                        breakTr.appendChild(breakTd);
+                        tbody.appendChild(breakTr);
+                    }
+                });
+
+                table.appendChild(tbody);
+                timesPare.appendChild(table);
+                dayDiv.appendChild(timesPare);
+                container.appendChild(dayDiv);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            generateSchedule('first');
+            generateSchedule('second');
+        });
+    </script>
+
+</body>
+
+</html>

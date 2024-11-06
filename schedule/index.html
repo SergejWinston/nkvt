@@ -18,9 +18,9 @@
     <meta property="twitter:description" content="Already studying.. I need a cup of tea. ☕" />
     <meta property="twitter:image" content="https://sneroff.me/image.png" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/svg" href="favicon.svg" />
-    <script src="js/function.js"></script>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" type="image/svg" href="../favicon.svg" />
+    <script src="../js/function.js"></script>
 
     <script>
         function applyTheme(theme) {
@@ -55,9 +55,36 @@
                     class="gray-text">NKVT</span></span>
         </header>
 
-        <div class="content flex-center-items">
-            <div class="fit-block">
-                <div id="loader" class="loader"></div>
+        <div class="content">
+            <div class="block">
+                <div class="left mini-block">
+                    <div class="about-project">
+                        <img class="logo-collage" src="../logo.png" alt="image-collage">
+                        <h2 class="title-collage">НКЭиВТ</h2>
+                    </div>
+                    <div class="actions-block">
+                        <div class="collage button" onclick="window.location.href='http://www.nke.ru/'">
+                            <a href="http://www.nke.ru/">Сайт НКЭиВТ</a>
+                        </div>
+                        <div class="schedule button" onclick="window.location.href='../times/'">
+                            <a href="../times/">Расписание звонков</a>
+                        </div>
+                        <div class="schedule button" onclick="window.location.href='../schedule/'">
+                            <a href="../schedule/">Расписание уроков</a>
+                        </div>
+                        <div class="hometask button" onclick="window.location.href='../tasks/'">
+                            <a href="../tasks/">Домашнее задание</a>
+                        </div>
+                    </div>
+                    <div class="description-project">
+                        <p>Проект создан для учеников НКЭиВТ, чтобы иметь доступ к расписанию уроков и домашнему заданию
+                            в любое время. Этот проект помогает студентам оставаться организованными и эффективно
+                            управлять своим временем.</p>
+                    </div>
+                </div>
+                <div class="right mini-block">
+
+                </div>
             </div>
         </div>
 
@@ -69,11 +96,6 @@
         </footer>
     </div>
 
-
-    <script>
-        setTimeout(() => {
-            window.location.href='schedule/'
-        }, 2000);
-    </script>
 </body>
+
 </html>

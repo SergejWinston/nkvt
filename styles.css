@@ -221,6 +221,10 @@ header {
     margin-bottom: 20px;
     padding: 1vh 2vh;
     border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
     border: 2px solid #888;
     background-color: #f9f9f9;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -506,7 +510,7 @@ header {
 
 .left.mini-block {
     flex: 0 0 17%;
-    min-width: 215px;
+    min-width: 260px;
     background-color: var(--block-background-color-light);
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -517,6 +521,14 @@ header {
 
 .right.mini-block {
     flex: 1;
+    padding: 20px;
+    padding-top: 0;
+    background-color: var(--block-background-color-light);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 .logo-collage {
@@ -558,10 +570,136 @@ h2.title-collage {
     margin-top: 0;
 }
 
+.button:last-of-type {
+    margin-bottom: 0;
+}
+
 .button:hover {
     cursor: pointer;
 }
 
+.actions-block>*>a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.description-project {
+    margin: 0 20px;
+    text-align: justify;
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 4px solid #3498db;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    -webkit-animation: spin 2s linear infinite;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+h2.title-page {
+    text-align: center;
+}
+
+h2.subtitle {
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.days {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+}
+
+.dayofweek {
+    min-width: 150px;
+    min-height: 150px;
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--button-background-color-dark);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.nameday {
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    margin: 0 auto;
+    height: 30px;
+    background-color: var(--theme-subject);
+    border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -ms-border-radius: 5px 5px 0 0;
+    -o-border-radius: 5px 5px 0 0;
+}
+
+.times-pare {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+table, th, td, tr {
+    border: 0;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 5px;
+    text-align: center;
+}
+
+tr {
+    height: 25px;
+}
+
+tr:nth-child(odd) {
+    background-color: var(--button-background-color-dark);
+}
+
+tr:nth-child(even) {
+    background-color: var(--button-background-color-light);
+}
+
+
+.sub-elements-first {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.sub-elements-second {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
 
 @media (max-width: 1000px) {
@@ -576,6 +714,24 @@ h2.title-collage {
     .actions-block {
         padding: 0 20px;
     }
+
+    .right.mini-block {
+        margin-top: 20px;
+    }
+
+    .sub-elements-first {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    .sub-elements-second {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    .dayofweek {
+        min-width: 100%;
+    }
 }
 
 @media (min-width: 1001px) {
@@ -583,4 +739,9 @@ h2.title-collage {
         width: 40%;
         min-width: 100px;
     }
+
+    .right.mini-block {
+        margin-left: 20px;
+    }
 }
+
